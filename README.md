@@ -8,4 +8,5 @@ To use the content blocker, paste the div with the class "consent-container" and
 \
 IMPORTANT: \
 Replace the "src"-attribute in the iframe with the "data-src" attribute, like so
-<iframe data-src="https://website.com/"></iframe>
+<iframe data-src="ht<span>tp://</span>example.com/"></iframe>
+
