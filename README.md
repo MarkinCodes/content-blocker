@@ -11,6 +11,6 @@ script.js belongs to the footer \
 \
 IMPORTANT: \
 Replace the "src"-attribute in the iframe with the "data-src" attribute, like so
-<iframe data-src="ht<span>tp://</span>example.com/"></iframe>\
+<iframe data-src="ht<span>tp://</span>example.com/"></iframe> \
 \
 Don't forget to put the "remove cookie button" to your privacy or cookie page
