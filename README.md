@@ -7,5 +7,5 @@ Demo: https://xretunes.github.io/content-blocker/ \
 To use the content blocker, paste the div with the class "consent-container" and replace the "src" with "data-src"\
 \
 IMPORTANT: \
-Replace the "src"-attribute in the iframe with the "data-src" attribute, like so \
+Replace the "src"-attribute in the iframe with the "data-src" attribute, like so
 <iframe data-src="https://website.com/"></iframe>
