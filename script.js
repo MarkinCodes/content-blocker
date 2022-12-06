@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function activateContent() {
         const iframes = document.querySelectorAll( '.consent-container [data-src]' );
 
-		iframes.forEach( ( iframe ) => {
-			iframe.src = iframe.dataset.src;
+        iframes.forEach( ( iframe ) => {
+            iframe.src = iframe.dataset.src;
             iframe.style.display = 'unset';
-		});
+        });
 
         document.querySelectorAll( '.consent-notice' ).forEach( element => {
             element.style.display = 'none';
