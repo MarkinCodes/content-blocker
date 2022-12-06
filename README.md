@@ -4,7 +4,9 @@ script.js will set a Cookie for 365 days.\
 \
 Demo: https://xretunes.github.io/content-blocker/ \
 \
-To use the content blocker, paste the div with the class "consent-container" from index.html. In the iframe replace the "src" with "data-src"\
+To use the content blocker, paste the div with the class "consent-container" from index.html. \
+In the iframe replace the "src" with "data-src"\
+\
 script.js belongs to the footer
 \
 IMPORTANT: \
