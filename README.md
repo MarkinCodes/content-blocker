@@ -8,8 +8,8 @@ To use the content blocker, paste the div with the class "consent-container" fro
 In the iframe replace the "src" with "data-src"\
 \
 script.js belongs to the footer \
-\
-## IMPORTANT: \
+
+### IMPORTANT:
 Don't forget to put the "remove cookie button" to your privacy or cookie page. \
 Replace the "src"-attribute in the iframe with the "data-src" attribute, like so
 <iframe data-src="ht<span>tp://</span>example.com/"></iframe>
