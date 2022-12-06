@@ -51,4 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ( getCookie( 'consent_content' ) === 'true' ? activateContent() : attachEvents() );
 
+    if (document.querySelector('#deleteCookieButton')) {
+        document.querySelector('#deleteCookieButton').addEventListener( 'click' , () => {
+            const iframes = document.querySelectorAll( '.consent-container [data-src]' );
+    
+            iframes.forEach( ( iframe ) => {
+                iframe.removeAttribute( 'src' );
+                iframe.style.display = 'none';
+            });
+    
+            document.querySelectorAll( '.consent-notice' ).forEach( element => {
+                element.style.display = 'unset';
+            });
+    
+            setCookie( 'consent_content', '', -1 );
+        })
+    }
+
 });
