@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
             document.querySelector('#deleteCookieButton').parentNode.insertBefore(cookieRemovedNotice, document.querySelector('#deleteCookieButton').nextSibling);
 
-        })
+        });
     }
 
 });
