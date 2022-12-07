@@ -26,6 +26,10 @@ iframe {
     position: relative;
 }
 
+.consent-container [data-src] {
+    display: none;
+}
+
 .content-blocker-headline {
     font-weight: 500;
     font-size: 1.25rem;
@@ -82,9 +86,12 @@ iframe {
     cursor: pointer;
 }
 
+/* remove cookie section */
 .manage-consent,
-.consent-btn {
+.consent-btn,
+.manage-consent p {
     margin-inline: auto;
+    text-align: center;
 }
 
 .manage-consent h3 {
@@ -96,8 +103,4 @@ iframe {
 
 .manage-consent p {
     margin-top: 1rem;
-}
-
-.consent-container [data-src] {
-    display: none;
 }
