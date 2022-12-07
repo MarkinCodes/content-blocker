@@ -86,7 +86,6 @@ iframe {
 
 .manage-consent {
     margin-inline: auto;
-    margin-bottom: 1rem;
 }
 
 .manage-consent h3 {
@@ -94,6 +93,10 @@ iframe {
     font-size: 1.25rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+.manage-consent p {
+    margin-top: 1rem;
 }
 
 .consent-container [data-src] {
