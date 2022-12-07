@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     
             setCookie( 'consent_content', '', -1 );
+
+            let cookieRemovedNotice = document.createElement('p');
+            cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
+            document.querySelector('#deleteCookieButton').parentNode.insertBefore(cookieRemovedNotice, document.querySelector('#deleteCookieButton').nextSibling);
+
         })
     }
 
