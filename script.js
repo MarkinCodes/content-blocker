@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let cookieRemovedNotice = document.createElement('p');
             cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
-            document.querySelector('#deleteCookieButton').parentNode.insertBefore(cookieRemovedNotice, document.querySelector('#deleteCookieButton').nextSibling);
+  
+            if ( !document.querySelector( '.manage-consent p' )) {
+                document.querySelector( '#deleteCookieButton' ).parentNode.insertBefore(cookieRemovedNotice, document.querySelector( '#deleteCookieButton' ).nextSibling);
+            }
 
         });
     }
