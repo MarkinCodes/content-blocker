@@ -95,6 +95,10 @@ iframe {
     margin-bottom: 1rem;
 }
 
+.manage-consent + p {
+    margin-top: 1rem;
+}
+
 .consent-container [data-src] {
     display: none;
 }
