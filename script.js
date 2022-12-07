@@ -57,21 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         deleteCookieButton.addEventListener( 'click' , () => {
             const iframes = document.querySelectorAll( '.consent-container [data-src]' );
-    
+
             iframes.forEach( ( iframe ) => {
                 iframe.removeAttribute( 'src' );
                 iframe.style.display = 'none';
             });
-    
+
             document.querySelectorAll( '.consent-notice' ).forEach( element => {
                 element.style.display = 'unset';
             });
-            
-            setCookie( 'consent_content', '', -1 );
 
-            cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
-  
-            if ( !document.querySelector( '.manage-consent p' )) {
+            // add cookie-removed notice if the cookie is set
+            if ( !document.querySelector( '.manage-consent p' ) && getCookie( 'consent_content' ) === 'true' ) {
+                setCookie( 'consent_content', '', -1 );
+
+                cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
                 deleteCookieButton.parentNode.insertBefore(cookieRemovedNotice, deleteCookieButton.nextSibling);
                 setTimeout(() => { cookieRemovedNotice.remove(); }, 4000);
             }
