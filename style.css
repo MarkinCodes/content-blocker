@@ -76,7 +76,6 @@ iframe {
 
 .consent-btn {
     font-size: 16px;
-    margin-inline: auto;
     display: block;
     margin-top: 1rem;
     padding: .5rem .75rem;
@@ -86,10 +85,14 @@ iframe {
 }
 
 .manage-consent {
+    margin-inline: auto;
+}
+
+.manage-consent h3 {
     font-weight: 500;
     font-size: 1.25rem;
     margin-top: 2rem;
-    margin-inline: auto;
+    margin-bottom: 1rem;
 }
 
 .consent-container [data-src] {
