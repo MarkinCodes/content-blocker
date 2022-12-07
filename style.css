@@ -96,7 +96,7 @@ iframe {
 }
 
 .manage-consent + p {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .consent-container [data-src] {
