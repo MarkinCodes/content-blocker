@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.querySelector('#deleteCookieButton')) {
         let deleteCookieButton = document.querySelector( '#deleteCookieButton' );
+        let cookieRemovedNotice = document.createElement('p');
 
         deleteCookieButton.addEventListener( 'click' , () => {
             const iframes = document.querySelectorAll( '.consent-container [data-src]' );
@@ -65,14 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll( '.consent-notice' ).forEach( element => {
                 element.style.display = 'unset';
             });
-    
+            
             setCookie( 'consent_content', '', -1 );
 
-            let cookieRemovedNotice = document.createElement('p');
             cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
   
             if ( !document.querySelector( '.manage-consent p' )) {
                 deleteCookieButton.parentNode.insertBefore(cookieRemovedNotice, deleteCookieButton.nextSibling);
+                setTimeout(() => { cookieRemovedNotice.remove(); }, 4000);
             }
 
         });
