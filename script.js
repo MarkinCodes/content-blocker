@@ -1,3 +1,5 @@
+'use strict'
+
 document.addEventListener('DOMContentLoaded', () => {
 
     function setCookie( name, value, days ) {
@@ -28,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         iframes.forEach( ( iframe ) => {
             iframe.src = iframe.dataset.src;
             iframe.style.display = 'unset';
+
+            // create css loader
+            createSpinner(iframe);
         });
 
         document.querySelectorAll( '.consent-notice' ).forEach( element => {
@@ -51,10 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ( getCookie( 'consent_content' ) === 'true' ? activateContent() : attachEvents() );
 
-    if (document.querySelector('#deleteCookieButton')) {
+    if ( document.querySelector( '#deleteCookieButton' ) ) {
         let deleteCookieButton = document.querySelector( '#deleteCookieButton' );
-        let cookieRemovedNotice = document.createElement('p');
-
+        
         deleteCookieButton.addEventListener( 'click' , () => {
             const iframes = document.querySelectorAll( '.consent-container [data-src]' );
 
@@ -67,16 +71,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.style.display = 'unset';
             });
 
-            // add cookie-removed notice if the cookie is set
-            if ( !document.querySelector( '.manage-consent p' ) && getCookie( 'consent_content' ) === 'true' ) {
+            // add cookie-removed notice
+            if ( !document.querySelector( '.manage-consent p' ) ) {
                 setCookie( 'consent_content', '', -1 );
-
+                let cookieRemovedNotice = document.createElement('p');
                 cookieRemovedNotice.innerText = 'Erfolgreich entfernt';
-                deleteCookieButton.parentNode.insertBefore(cookieRemovedNotice, deleteCookieButton.nextSibling);
-                setTimeout(() => { cookieRemovedNotice.remove(); }, 4000);
+                deleteCookieButton.parentNode.insertBefore( cookieRemovedNotice, deleteCookieButton.nextSibling );
+                setTimeout( () => { cookieRemovedNotice.remove(); }, 4000 );
             }
 
         });
+    }
+
+    // css loader
+    function createSpinner( iframe ) {
+        let consentContainers = document.querySelectorAll( '.consent-container' );
+
+        if ( !document.querySelector( '.spinner' ) ) {
+            consentContainers.forEach( container => {
+                container.insertAdjacentHTML( 'beforeend', '<div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' );
+
+                iframe.addEventListener( 'load', function () {
+                    let spinners = document.querySelectorAll( '.spinner' );
+                    spinners.forEach( spinner => {
+                        spinner.remove();
+                    });
+                });
+            });
+        }
     }
 
 });
